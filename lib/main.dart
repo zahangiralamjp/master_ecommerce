@@ -1,4 +1,5 @@
 import 'dart:js';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:master_ecommerce/pages/HomePage.dart';
@@ -17,11 +18,6 @@ void main(List<String> args) {
     // themeMode: ThemeMode.dark,
     darkTheme: ThemeData(brightness: Brightness.dark),
     title: 'MyApp',
-    home: HomePage(),
-    initialRoute: '/login',
-    routes: {
-      '/home': (context) => HomePage(),
-      '/login': (context) => LogInPage(),
-    },
+    home: LogInPage()
   ));
 }
