@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:master_ecommerce/widget/drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,8 +9,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +19,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Text('Hello World!'),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }

@@ -1,29 +1,32 @@
+import 'dart:html';
+import 'package:form_validator/form_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:master_ecommerce/pages/HomePage.dart';
 
 class LogInPage extends StatefulWidget {
+  
   const LogInPage({Key? key}) : super(key: key);
 
   @override
   State<LogInPage> createState() => _LogInPageState();
+  
 }
 
 class _LogInPageState extends State<LogInPage> {
   String name = '';
 
+
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Log In Page'),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Form(
-              child: SingleChildScrollView(
+    return Material(
+      child: Form(
+         
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
+                SizedBox(height: 10),
                 Container(
                   width: 350,
                   height: 200,
@@ -43,6 +46,8 @@ class _LogInPageState extends State<LogInPage> {
                     labelText: 'User Name',
                     hintText: 'Enter Name',
                   ),
+                
+             
                   onChanged: (value) {
                     name = value;
                     setState(() {});
@@ -52,42 +57,28 @@ class _LogInPageState extends State<LogInPage> {
                 TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      labelText: 'User Password', hintText: 'Enter Password'),
+                    labelText: 'User password',
+                    hintText: 'Enter password',
+                  ),
+                  
                 ),
                 SizedBox(height: 10),
-                // ElevatedButton(
-                //   onPressed: () {
-                //     Navigator.push(context,
-                //         MaterialPageRoute(builder: (context) => LogInPage()));
-                //   },
-                //   child: Text('Log In'),
-                //   style: TextButton.styleFrom(minimumSize: Size(350, 40)),
-                // ),
                 InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
-                  },
-                  child: AnimatedContainer(
+                  onTap: (){},
+                  child: Container(
                     alignment: Alignment.center,
+                    width: 200,
+                    height: 25,
+                    color: Colors.blue,
                     child: Text(
                       'Log In',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 15),
                     ),
-                    width: 200,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    duration: Duration(seconds: 1),
                   ),
                 ),
               ],
             ),
           )),
-        ),
-      ),
     );
   }
 }
